@@ -146,6 +146,13 @@ def loans_test():
     assert bank[8].property_value == 215000
     assert len(bank[8].applicants) == 1
     loans_points += 1
+    
+    #test bank class
+    uwcu = loans.Bank("University of Wisconsin Credit Union")
+    assert repr(uwcu[-1]) == '<Loan: 2.99% on $185000.0 with 2 applicant(s)>'
+    assert len(uwcu) == 21153
+    assert uwcu.lei == '254900CN1DD55MJDFH69'
+    loans_points += 4
 
 def search_test():
     global search_points
